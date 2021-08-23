@@ -17,6 +17,7 @@ export class LoginCardComponent implements OnInit {
     console.log(this.userName)
     sessionStorage.userName = this.userName;
     this.userName = "";
+
   }
 
 }
