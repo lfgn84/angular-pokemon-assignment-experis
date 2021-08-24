@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-trainer-view',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrainerViewComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) {
+  }
 
   ngOnInit(): void {
+    if(sessionStorage.userName === "" || !sessionStorage.userName){
+      this.router.navigateByUrl("")
+  }
   }
 
 }

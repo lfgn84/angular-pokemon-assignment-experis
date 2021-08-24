@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, RouterLink, Routes } from '@angular/router';
 
 @Component({
   selector: 'app-login-card',
@@ -7,17 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginCardComponent implements OnInit {
   userName: string = "";
+  routerLink: string = '';
 
-  constructor() { }
+  constructor(private router:Router ) {
+
+   }
 
   ngOnInit(): void {
   }
 
   submitName(){
-    console.log(this.userName)
-    sessionStorage.userName = this.userName;
-    this.userName = "";
+    if(this.userName !==""){
+      sessionStorage.userName = this.userName;
+      this.router.navigateByUrl("/catalogue")
+    }else{
+      alert("Please enter a name.")
+      
+    }
 
   }
+  
+ 
 
 }
