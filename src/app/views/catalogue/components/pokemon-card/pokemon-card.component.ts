@@ -9,7 +9,11 @@ import {CatalogueServiceService as CatalogueService} from "../../../../services/
 })
 export class PokemonCardComponent implements OnInit {
 chosenPokemon: IndivdualPokemon = {baseStats: {img:"",types:"",name:"",id:0}, profile:{height:0,weight:0}}
-@Input() pokemon: Pokemon = {name:"", url:""};
+//chosenPokemon = []
+  @Input() pokemon: Pokemon = { name:"", url:""};
+  @Input() pokemonIndex: number = 0;
+  // @ts-ignore
+  imgUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"+(this.pokemonIndex+1)+".png";
 showPokemonDetails : boolean = false
   constructor(private catalogueService : CatalogueService) { }
 
@@ -17,8 +21,27 @@ showPokemonDetails : boolean = false
   }
 showDetails(){
   // @ts-ignore
+  this.catalogueService.getPokemonByUrl(this.pokemon.name).subscribe((chosen:any)=>{
+    this.chosenPokemon = this.buildPokemonObject(chosen);
+    console.log(this.chosenPokemon)
+  });
 
-  this.chosenPokemon = this.catalogueService.buildPokemonObject(this.catalogueService.getPokemonByUrl(this.pokemon.name)).subscribe(this.showPokemonDetails = true);
   }
+  buildPokemonObject(pokemon: any): IndivdualPokemon{
+    let name =pokemon.name;
+    let id = pokemon.id;
+    let types = pokemon.types;
+    let weight = pokemon.weight;
+    let height = pokemon.height;
+    let img = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/' + pokemon.id + '.png';
+
+    let pokemonObject = {
+      baseStats: {img:img, types:types, name:name, id:id},
+      profile: {height:height, weight:weight}
+    };
+    return pokemonObject;
+  }
+
+
 
 }

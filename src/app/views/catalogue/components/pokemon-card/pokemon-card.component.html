@@ -1,6 +1,8 @@
 <div>
 This pokemon is:
 <p> {{ pokemon.name }} </p>
+  <img src="{{imgUrl}}"/>
+  <p>Element index : {{pokemonIndex}} </p>
   <button (click)="showDetails()">Show more details</button>
   <div *ngIf="showPokemonDetails">
     <li></li>
