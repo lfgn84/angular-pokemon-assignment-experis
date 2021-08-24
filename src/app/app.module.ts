@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {HttpClientModule} from "@angular/common/http";
 
 import { AppComponent } from './app.component';
 import { LandingViewComponent } from './views/landing/landing-view/landing-view.component';
@@ -9,6 +10,7 @@ import { LoginCardComponent } from './views/landing/landing-view/components/logi
 
 import {FormsModule} from "@angular/forms";
 import {RouterModule, Routes} from "@angular/router";
+import { PokemonCardComponent } from './views/catalogue/components/pokemon-card/pokemon-card.component';
 
 const appRoutes: Routes = [
   { path: '', component: LandingViewComponent },
@@ -23,11 +25,13 @@ const appRoutes: Routes = [
     LandingViewComponent,
     TrainerViewComponent,
     CatalogueViewComponent,
-    LoginCardComponent
+    LoginCardComponent,
+    PokemonCardComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes, {enableTracing: true})
   ],
   providers: [],
