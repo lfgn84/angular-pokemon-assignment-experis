@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'; 
+import { HttpClient } from '@angular/common/http';
 import { Pokemon } from '../models/pokemon.model';
 import { Observable } from 'rxjs';
 
@@ -11,8 +11,9 @@ export class CatalogueServiceService {
 
   constructor(private http: HttpClient) { }
 
-  getAllPokemon():Observable<Pokemon[]>{
-    return this.http.get<Pokemon[]>(this.apiUrl);
-    
+  getAllPokemon(): Observable<any[]>{
+
+    return this.http.get<any[]>(this.apiUrl);
+
   }
 }
