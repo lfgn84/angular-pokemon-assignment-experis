@@ -1,4 +1,9 @@
 <div>
 This pokemon is:
 <p> {{ pokemon.name }} </p>
+  <button (click)="showDetails()">Show more details</button>
+  <div *ngIf="showPokemonDetails">
+    <li></li>
+
+  </div>
 </div>

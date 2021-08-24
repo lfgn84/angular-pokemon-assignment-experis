@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class CatalogueServiceService {
   private apiUrl:string = "https://pokeapi.co/api/v2/pokemon?limit=151"
+  private apiUrlperPokemon = "https://pokeapi.co/api/v2/pokemon/"
 
   constructor(private http: HttpClient) { }
 
@@ -15,5 +16,9 @@ export class CatalogueServiceService {
 
     return this.http.get<any[]>(this.apiUrl);
 
+  }
+
+  getPokemonByUrl(name:string): Observable<any>{
+    return this.http.get<any>(this.apiUrlperPokemon+name)
   }
 }
