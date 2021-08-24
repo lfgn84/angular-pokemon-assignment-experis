@@ -11,7 +11,7 @@ import {FormsModule} from "@angular/forms";
 import {RouterModule, Routes} from "@angular/router";
 
 const appRoutes: Routes = [
-  { path: 'landing', component: LandingViewComponent },
+  { path: '', component: LandingViewComponent },
   { path: 'catalogue', component: CatalogueViewComponent },
   { path: 'trainer', component: TrainerViewComponent }
 

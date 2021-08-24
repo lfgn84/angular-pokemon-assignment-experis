@@ -1,11 +1,12 @@
 <div>
-  <h1>WELCOME TO THE POKEMON CATHER / EXPERIS</h1>
+  <h1>WELCOME TO THE POKEMON CATCHER / EXPERIS</h1>
 <form>
   <div>
     <p>{{ userName }}</p>
     <label for="userName">Enter Your Name</label>
     <input  id="userName" name="userName" [(ngModel)]="userName" placeholder="Your user name"/>
-    <input type="submit" value="Enter" (click)="submitName()" routerLink="/catalogue" />
+    <input   type="submit" value="Enter" (click)="submitName()" />
+    
   </div>
 </form>
 </div>
