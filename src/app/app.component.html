@@ -1,2 +1,8 @@
-<app-landing-view></app-landing-view>
+<div *ngif="userName !== '' ">
+    <div *ngif="hasRoute('/')">
+        <app-landing-view ></app-landing-view>
+    </div>
+</div>
+
+
 <router-outlet></router-outlet>
