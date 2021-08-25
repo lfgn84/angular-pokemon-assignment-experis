@@ -13,7 +13,6 @@ chosenPokemon: IndivdualPokemon = {baseStats: {img:"",types:"",name:"",id:0}, pr
   @Input() pokemon: Pokemon = { name:"", url:""};
   @Input() pokemonIndex: number = 0;
   // @ts-ignore
-  imgUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"+(this.pokemonIndex+1)+".png";
 showPokemonDetails : boolean = false
   constructor(private catalogueService : CatalogueService) { }
 
@@ -40,6 +39,10 @@ showDetails(){
       profile: {height:height, weight:weight}
     };
     return pokemonObject;
+  }
+
+  assignIndex(index:number){
+      return index + 1
   }
 
 
