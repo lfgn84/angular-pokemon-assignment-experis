@@ -21,7 +21,7 @@ export class CatalogueViewComponent implements OnInit {
     }
     this.catalogueService.getAllPokemon().subscribe((pokes:any)=> {
       this.allPokemons = pokes.results
-      console.log(this.allPokemons)
+     
       
 
     })
@@ -32,7 +32,7 @@ export class CatalogueViewComponent implements OnInit {
   }
 
   showArray(){
-    console.log(this.allPokemons)
+    //console.log(this.allPokemons)
   }
 
   pushPokemon(value: IndivdualPokemon){

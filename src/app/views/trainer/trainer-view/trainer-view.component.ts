@@ -8,14 +8,15 @@ import { IndivdualPokemon } from 'src/app/models/pokemon.model';
   styleUrls: ['./trainer-view.component.css']
 })
 export class TrainerViewComponent implements OnInit {
-  catchedPokemons:IndivdualPokemon[] = JSON.parse(sessionStorage.storedCatchedPokemons)
+  catchedPokemons:IndivdualPokemon[] =[]
   constructor(private router:Router) {
   }
 
   ngOnInit(): void {
     if(sessionStorage.userName === "" || !sessionStorage.userName){
-      this.router.navigateByUrl("/")
+      this.router.navigateByUrl("")
   }
+  this.catchedPokemons = JSON.parse(sessionStorage.storedCatchedPokemons);
   }
 
 }
