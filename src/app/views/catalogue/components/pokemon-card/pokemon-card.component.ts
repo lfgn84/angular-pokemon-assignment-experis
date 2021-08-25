@@ -46,6 +46,7 @@ chosenPokemon: IndivdualPokemon = {baseStats: {img:"",types:"",name:"",id:0}, pr
   catchPokemon(){
     this.catched = true;
     this.onCatchingPokemon.emit(this.chosenPokemon)
+    
 
   }
 

@@ -15,6 +15,7 @@ import { ToCatalogueButtonComponent } from './views/shared/components/to-catalog
 
 import {FormsModule} from "@angular/forms";
 import {RouterModule, Routes} from "@angular/router";
+import { TrainerPokemonCardComponent } from './views/trainer/components/trainer-pokemon-card/trainer-pokemon-card.component';
 
 const appRoutes: Routes = [
   { path: '', component: LandingViewComponent },
@@ -33,7 +34,8 @@ const appRoutes: Routes = [
     PokemonCardComponent,
     LogOutButtonComponent,
     ToProfileButtonComponent,
-    ToCatalogueButtonComponent
+    ToCatalogueButtonComponent,
+    TrainerPokemonCardComponent
   ],
   imports: [
     BrowserModule,
