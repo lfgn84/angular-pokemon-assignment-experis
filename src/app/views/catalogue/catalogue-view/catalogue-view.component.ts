@@ -11,6 +11,8 @@ import {Observable} from "rxjs";
 export class CatalogueViewComponent implements OnInit {
   allPokemons: any = []
   catchedPokemons: IndivdualPokemon[] = []
+  isTrainerEmpty: boolean = true;
+  
   constructor(private router:Router, private catalogueService: CatalogueService) { }
 
    ngOnInit  () {
@@ -20,6 +22,7 @@ export class CatalogueViewComponent implements OnInit {
     this.catalogueService.getAllPokemon().subscribe((pokes:any)=> {
       this.allPokemons = pokes.results
       console.log(this.allPokemons)
+      
 
     })
      if(sessionStorage.storedCatchedPokemons){
@@ -36,6 +39,7 @@ export class CatalogueViewComponent implements OnInit {
     console.log("Logging from parent : "+JSON.stringify(value))
     if(sessionStorage.storedCatchedPokemons){
       this.catchedPokemons = JSON.parse(sessionStorage.storedCatchedPokemons);
+
     }
     this.catchedPokemons.push(value)
     sessionStorage.storedCatchedPokemons = JSON.stringify(this.catchedPokemons)
