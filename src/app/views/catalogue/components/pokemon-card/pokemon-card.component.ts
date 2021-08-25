@@ -8,11 +8,12 @@ import {CatalogueServiceService as CatalogueService} from "../../../../services/
   styleUrls: ['./pokemon-card.component.css']
 })
 export class PokemonCardComponent implements OnInit {
-chosenPokemon: IndivdualPokemon = {baseStats: {img:"",types:"",name:"",id:0}, profile:{height:0,weight:0}}
+  chosenPokemon: IndivdualPokemon = {catched:false, baseStats: {img:"",types:"",name:"",id:0}, profile:{height:0,weight:0}}
   @Output() onCatchingPokemon : EventEmitter<IndivdualPokemon> = new EventEmitter();
+  @Output() onReleasePokemon : EventEmitter<IndivdualPokemon> = new EventEmitter();
   @Input() pokemon: Pokemon = { name:"", url:""};
   @Input() pokemonIndex: number = 0;
-  catched : boolean = false;
+  //catched : boolean = false;
   // @ts-ignore
   constructor(private catalogueService : CatalogueService) { }
 
@@ -20,11 +21,22 @@ chosenPokemon: IndivdualPokemon = {baseStats: {img:"",types:"",name:"",id:0}, pr
     this.catalogueService.getPokemonByUrl(this.pokemon.name).subscribe((chosen:any)=>{
     this.chosenPokemon = this.buildPokemonObject(chosen);
       console.log(this.chosenPokemon)
+      if(sessionStorage.storedCatchedPokemons){
+        let tempArray = JSON.parse(sessionStorage.storedCatchedPokemons);
+        for(let i = 0 ; i < tempArray.length ; i++){
+          if(tempArray[i].baseStats.id === this.chosenPokemon.baseStats.id){
+            this.chosenPokemon.catched = true;
+            break;
+          }
+        }
+      }
+    
 
     });
   }
 
   buildPokemonObject(pokemon: any): IndivdualPokemon{
+    
     let name =pokemon.name;
     let id = pokemon.id;
     let types = pokemon.types;
@@ -33,6 +45,7 @@ chosenPokemon: IndivdualPokemon = {baseStats: {img:"",types:"",name:"",id:0}, pr
     let img = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/' + pokemon.id + '.png';
 
     let pokemonObject = {
+      catched: false,
       baseStats: {img:img, types:types, name:name, id:id},
       profile: {height:height, weight:weight}
     };
@@ -44,14 +57,16 @@ chosenPokemon: IndivdualPokemon = {baseStats: {img:"",types:"",name:"",id:0}, pr
   }
 
   catchPokemon(){
-    this.catched = true;
+    //this.catched = true;
+    this.chosenPokemon.catched = true;
     this.onCatchingPokemon.emit(this.chosenPokemon)
     
-
   }
 
   releasePokemon(){
-    this.catched = false
+    //this.catched = false
+    this.chosenPokemon.catched = false;
+    this.onReleasePokemon.emit(this.chosenPokemon)
   }
 
 

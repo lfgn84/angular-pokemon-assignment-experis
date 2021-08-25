@@ -16,8 +16,8 @@ This pokemon is:
 
   </div>
   <div>
-    <button *ngIf="!catched" (click)="catchPokemon()">Catch !</button>
-    <button *ngIf="catched" (click)="releasePokemon()">Release !</button>
+    <button *ngIf="!chosenPokemon.catched" (click)="catchPokemon()">Catch !</button>
+    <button *ngIf="chosenPokemon.catched" (click)="releasePokemon()">Release !</button>
   </div>
 </div>
 

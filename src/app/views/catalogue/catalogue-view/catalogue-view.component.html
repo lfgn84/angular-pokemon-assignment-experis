@@ -6,5 +6,6 @@
 <app-pokemon-card *ngFor="let pokemon of allPokemons; index as i"
                   [pokemon]="pokemon" [pokemonIndex]="i"
                   (onCatchingPokemon)="pushPokemon($event)"
+                  (onReleasePokemon)="removePokemon($event)"
 
 ></app-pokemon-card>

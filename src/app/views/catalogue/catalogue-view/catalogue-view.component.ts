@@ -22,8 +22,6 @@ export class CatalogueViewComponent implements OnInit {
     this.catalogueService.getAllPokemon().subscribe((pokes:any)=> {
       this.allPokemons = pokes.results
      
-      
-
     })
      if(sessionStorage.storedCatchedPokemons){
        this.catchedPokemons = JSON.parse(sessionStorage.storedCatchedPokemons);
@@ -44,6 +42,16 @@ export class CatalogueViewComponent implements OnInit {
     this.catchedPokemons.push(value)
     sessionStorage.storedCatchedPokemons = JSON.stringify(this.catchedPokemons)
    //this.catchedPokemons.push(value)
+  }
+
+  removePokemon(value: IndivdualPokemon){
+    if(sessionStorage.storedCatchedPokemons){
+      this.catchedPokemons = JSON.parse(sessionStorage.storedCatchedPokemons);
+
+    }
+    let indexToRemove = this.catchedPokemons.indexOf(value)
+    this.catchedPokemons.splice(indexToRemove,1)
+    sessionStorage.storedCatchedPokemons = JSON.stringify(this.catchedPokemons)
   }
 
 }

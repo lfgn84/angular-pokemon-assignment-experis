@@ -3,6 +3,7 @@ export interface Pokemon {
   url: string;
 }
 export interface IndivdualPokemon {
+  catched:boolean,
   baseStats: {
     img: string,
     types: string,

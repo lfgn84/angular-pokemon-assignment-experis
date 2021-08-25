@@ -7,7 +7,7 @@ import { IndivdualPokemon } from 'src/app/models/pokemon.model';
   styleUrls: ['./trainer-pokemon-card.component.css']
 })
 export class TrainerPokemonCardComponent implements OnInit {
-  @Input() catchedPokemon:IndivdualPokemon = {baseStats: {img:"",types:"",name:"",id:0}, profile:{height:0,weight:0}}
+  @Input() catchedPokemon:IndivdualPokemon = {catched:true, baseStats: {img:"",types:"",name:"",id:0}, profile:{height:0,weight:0}}
   constructor() { }
 
   ngOnInit(): void {
