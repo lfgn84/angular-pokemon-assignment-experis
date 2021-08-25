@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Pokemon } from 'src/app/models/pokemon.model';
+import {IndivdualPokemon, Pokemon} from 'src/app/models/pokemon.model';
 import { CatalogueServiceService as CatalogueService} from 'src/app/services/catalogue-service.service';
 import {Observable} from "rxjs";
 @Component({
@@ -10,6 +10,7 @@ import {Observable} from "rxjs";
 })
 export class CatalogueViewComponent implements OnInit {
   allPokemons: any = []
+  catchedPokemons: IndivdualPokemon[] = []
   constructor(private router:Router, private catalogueService: CatalogueService) { }
 
    ngOnInit  () {
@@ -21,11 +22,24 @@ export class CatalogueViewComponent implements OnInit {
       console.log(this.allPokemons)
 
     })
+     if(sessionStorage.storedCatchedPokemons){
+       this.catchedPokemons = JSON.parse(sessionStorage.storedCatchedPokemons);
+      }
 
   }
 
   showArray(){
     console.log(this.allPokemons)
+  }
+
+  pushPokemon(value: IndivdualPokemon){
+    console.log("Logging from parent : "+JSON.stringify(value))
+    if(sessionStorage.storedCatchedPokemons){
+      this.catchedPokemons = JSON.parse(sessionStorage.storedCatchedPokemons);
+    }
+    this.catchedPokemons.push(value)
+    sessionStorage.storedCatchedPokemons = JSON.stringify(this.catchedPokemons)
+   //this.catchedPokemons.push(value)
   }
 
 }

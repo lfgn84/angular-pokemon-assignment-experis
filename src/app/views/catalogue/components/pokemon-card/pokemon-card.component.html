@@ -2,9 +2,22 @@
 This pokemon is:
 <p> {{ pokemon.name }} </p>
   <img [src]='"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"+this.assignIndex(this.pokemonIndex)+".png"'/>
-  <p>Element index : {{pokemonIndex}} </p>
-  <button (click)="showDetails()">Show more details</button>
-  <div *ngIf="showPokemonDetails">
-hej
+  <div>
+
+  <div>
+    <label>Weight: </label>
+    <p>{{chosenPokemon.profile.weight}}</p>
+  </div>
+
+  <div>
+    <label>Height: </label>
+    <p>{{chosenPokemon.profile.height}}</p>
+  </div>
+
+  </div>
+  <div>
+    <button *ngIf="!catched" (click)="catchPokemon()">Catch !</button>
+    <button *ngIf="catched" (click)="releasePokemon()">Release !</button>
   </div>
 </div>
+

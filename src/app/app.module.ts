@@ -7,10 +7,11 @@ import { LandingViewComponent } from './views/landing/landing-view/landing-view.
 import { TrainerViewComponent } from './views/trainer/trainer-view/trainer-view.component';
 import { CatalogueViewComponent } from './views/catalogue/catalogue-view/catalogue-view.component';
 import { LoginCardComponent } from './views/landing/landing-view/components/login-card/login-card.component';
+import {PokemonCardComponent } from './views/catalogue/components/pokemon-card/pokemon-card.component';
+
 
 import {FormsModule} from "@angular/forms";
 import {RouterModule, Routes} from "@angular/router";
-import { PokemonCardComponent } from './views/catalogue/components/pokemon-card/pokemon-card.component';
 
 const appRoutes: Routes = [
   { path: '', component: LandingViewComponent },

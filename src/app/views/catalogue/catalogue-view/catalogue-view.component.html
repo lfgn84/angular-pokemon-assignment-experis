@@ -1,2 +1,6 @@
 <p>catalogue-view works!</p>
-<app-pokemon-card *ngFor="let pokemon of allPokemons; index as i" [pokemon]="pokemon" [pokemonIndex]="i"></app-pokemon-card>
+<app-pokemon-card *ngFor="let pokemon of allPokemons; index as i"
+                  [pokemon]="pokemon" [pokemonIndex]="i"
+                  (onCatchingPokemon)="pushPokemon($event)"
+
+></app-pokemon-card>
