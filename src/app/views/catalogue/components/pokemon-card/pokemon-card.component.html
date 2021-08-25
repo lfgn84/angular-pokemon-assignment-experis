@@ -1,4 +1,10 @@
 <div>
 This pokemon is:
 <p> {{ pokemon.name }} </p>
+  <img [src]='"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"+this.assignIndex(this.pokemonIndex)+".png"'/>
+  <p>Element index : {{pokemonIndex}} </p>
+  <button (click)="showDetails()">Show more details</button>
+  <div *ngIf="showPokemonDetails">
+hej
+  </div>
 </div>
