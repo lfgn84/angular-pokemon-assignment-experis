@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { LandingViewComponent } from './views/landing/landing-view/landing-view.component';
 import { TrainerViewComponent } from './views/trainer/trainer-view/trainer-view.component';
 import { CatalogueViewComponent } from './views/catalogue/catalogue-view/catalogue-view.component';
-import { LoginCardComponent } from './views/landing/landing-view/components/login-card/login-card.component';
+import { LoginCardComponent } from './views/landing/components/login-card/login-card.component';
 import {PokemonCardComponent } from './views/catalogue/components/pokemon-card/pokemon-card.component';
 import { LogOutButtonComponent } from './views/shared/components/log-out-button/log-out-button.component';
 import { ToProfileButtonComponent } from './views/shared/components/to-profile-button/to-profile-button.component';

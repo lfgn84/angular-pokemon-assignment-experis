@@ -1,4 +1,4 @@
-<div *ngIf="!chosenPokemon.catched">
+<div *ngIf="!chosenPokemon.catched" (click)="catchPokemon()">
   <div class="card-container" >
     <div class="details-container" >
       <img class="pokemon-image"
@@ -22,8 +22,8 @@
 
       </div>
       <div>
-        <button class="button" *ngIf="!chosenPokemon.catched" (click)="catchPokemon()">Catch !</button>
-        <button class="button" *ngIf="chosenPokemon.catched" (click)="releasePokemon()">Release !</button>
+<!--        <button class="button" *ngIf="!chosenPokemon.catched" (click)="catchPokemon()">Catch !</button>-->
+<!--        <button class="button" *ngIf="chosenPokemon.catched" (click)="releasePokemon()">Release !</button>-->
       </div>
 
 
@@ -31,7 +31,7 @@
 
   </div>
 </div>
-<div *ngIf="chosenPokemon.catched">
+<div *ngIf="chosenPokemon.catched" (click)="releasePokemon()">
   <div class="card-container-caught">
     <div class="details-container">
       <img class="pokemon-image"
@@ -51,14 +51,14 @@
             <label>Height: </label>
             <p>{{chosenPokemon.profile.height}}</p>
           </div>
-          
+
         </div>
-        
+
 
       </div>
       <div>
-        <button class="button" *ngIf="!chosenPokemon.catched" (click)="catchPokemon()">Catch !</button>
-        <button class="button" *ngIf="chosenPokemon.catched" (click)="releasePokemon()">Release !</button>
+<!--        <button class="button" *ngIf="!chosenPokemon.catched" (click)="catchPokemon()">Catch !</button>-->
+<!--        <button class="button" *ngIf="chosenPokemon.catched" (click)="releasePokemon()">Release !</button>-->
       </div>
 
     </div>
