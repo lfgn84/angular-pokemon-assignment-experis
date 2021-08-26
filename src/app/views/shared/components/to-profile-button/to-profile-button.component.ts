@@ -7,19 +7,19 @@ import {Router} from "@angular/router";
   styleUrls: ['./to-profile-button.component.css']
 })
 export class ToProfileButtonComponent implements OnInit {
-  
+
   constructor( private router: Router) { }
 
   ngOnInit(): void {
-   
+
   }
   toProfile(){
-    if(sessionStorage.storedCatchedPokemons && JSON.parse(sessionStorage.storedCatchedPokemons).length != 0){
+    if(sessionStorage.storedCatchedPokemons && JSON.parse(sessionStorage.storedCatchedPokemons).length > 0){
       this.router.navigateByUrl("/trainer")
-    }else if (!sessionStorage.storedCatchedPokemons){
+    }else if (!sessionStorage.storedCatchedPokemons || JSON.parse(sessionStorage.storedCatchedPokemons).length < 1){
       alert("You have not caught any Pokemon!")
     }
-      
+
 
 
   }
