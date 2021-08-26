@@ -8,15 +8,17 @@ import { IndivdualPokemon } from 'src/app/models/pokemon.model';
   styleUrls: ['./trainer-view.component.css']
 })
 export class TrainerViewComponent implements OnInit {
-  catchedPokemons:IndivdualPokemon[] =[]
-  constructor(private router:Router) {
+  catchedPokemons: IndivdualPokemon[] = []
+  constructor(private router: Router) {
   }
 
   ngOnInit(): void {
-    if(sessionStorage.userName === "" || !sessionStorage.userName){
+    if (sessionStorage.userName === "" || !sessionStorage.userName) {
       this.router.navigateByUrl("")
-  }
-  this.catchedPokemons = JSON.parse(sessionStorage.storedCatchedPokemons);
+    } else if (!sessionStorage.storedCatchedPokemons || JSON.parse(sessionStorage.storedCatchedPokemons).length === 0) {
+      this.router.navigateByUrl("/catalogue")
+    }
+    this.catchedPokemons = JSON.parse(sessionStorage.storedCatchedPokemons);
   }
 
 }

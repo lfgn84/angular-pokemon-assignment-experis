@@ -14,9 +14,9 @@ export class ToProfileButtonComponent implements OnInit {
    
   }
   toProfile(){
-    if(sessionStorage.storedCatchedPokemons){
+    if(sessionStorage.storedCatchedPokemons && JSON.parse(sessionStorage.storedCatchedPokemons).length != 0){
       this.router.navigateByUrl("/trainer")
-    }else{
+    }else if (!sessionStorage.storedCatchedPokemons){
       alert("You have not caught any Pokemon!")
     }
       

@@ -1,11 +1,8 @@
-<p>catalogue-view works!</p>
-<div>
-  <app-to-profile-button ></app-to-profile-button>
+<div class="nav-container font">
+  <app-to-profile-button></app-to-profile-button>
   <app-log-out-button></app-log-out-button>
 </div>
-<app-pokemon-card *ngFor="let pokemon of allPokemons; index as i"
-                  [pokemon]="pokemon" [pokemonIndex]="i"
-                  (onCatchingPokemon)="pushPokemon($event)"
-                  (onReleasePokemon)="removePokemon($event)"
-
-></app-pokemon-card>
+<div class="catalogue-container font">
+  <app-pokemon-card *ngFor="let pokemon of allPokemons; index as i" [pokemon]="pokemon" [pokemonIndex]="i"
+  (onCatchingPokemon)="pushPokemon($event)" (onReleasePokemon)="removePokemon($event)"></app-pokemon-card>
+</div>

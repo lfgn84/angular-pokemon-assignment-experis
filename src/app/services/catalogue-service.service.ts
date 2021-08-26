@@ -19,8 +19,7 @@ export class CatalogueServiceService {
   }
 
   getPokemonByUrl(name:string): Observable<any[]>{
-    console.log(this.apiUrlperPokemon + name)
-    return this.http.get<any[]>(this.apiUrlperPokemon + name)
+       return this.http.get<any[]>(this.apiUrlperPokemon + name)
   }
 
 }

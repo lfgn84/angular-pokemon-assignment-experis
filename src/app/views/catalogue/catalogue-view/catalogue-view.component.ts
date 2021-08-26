@@ -30,11 +30,11 @@ export class CatalogueViewComponent implements OnInit {
   }
 
   showArray(){
-    //console.log(this.allPokemons)
+    
   }
 
   pushPokemon(value: IndivdualPokemon){
-    console.log("Logging from parent : "+JSON.stringify(value))
+    //console.log("Logging from parent : "+JSON.stringify(value))
     if(sessionStorage.storedCatchedPokemons){
       this.catchedPokemons = JSON.parse(sessionStorage.storedCatchedPokemons);
 

@@ -1,16 +1,16 @@
 
-<div>
-    This pokemon is:
-    <p>  {{catchedPokemon.baseStats.name}}</p>
-      <img src={{catchedPokemon.baseStats.img}}/>
-      <div>
-    
-      <div>
+<div class="card-container ">
+  
+    <div class="details-container">
+      <img class ="pokemon-image" src={{catchedPokemon.baseStats.img}}/>
+
+      <div class="card-elements" >
+        <p>  {{catchedPokemon.baseStats.name}}</p>
+      <div class="card-elements">
         <label>Weight: </label>
         <p>{{catchedPokemon.profile.weight}}</p>
       </div>
-    
-      <div>
+      <div class="card-elements">
         <label>Height: </label>
         <p>{{catchedPokemon.profile.height}}</p>
       </div>
@@ -18,5 +18,7 @@
       </div>
      
     </div>
+    
+</div>
     
     

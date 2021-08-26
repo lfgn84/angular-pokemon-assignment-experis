@@ -11,6 +11,7 @@ export class TrainerPokemonCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
 
   }
 

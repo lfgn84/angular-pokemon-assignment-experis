@@ -20,8 +20,7 @@ export class PokemonCardComponent implements OnInit {
   ngOnInit(): void {
     this.catalogueService.getPokemonByUrl(this.pokemon.name).subscribe((chosen:any)=>{
     this.chosenPokemon = this.buildPokemonObject(chosen);
-      console.log(this.chosenPokemon)
-      if(sessionStorage.storedCatchedPokemons){
+        if(sessionStorage.storedCatchedPokemons){
         let tempArray = JSON.parse(sessionStorage.storedCatchedPokemons);
         for(let i = 0 ; i < tempArray.length ; i++){
           if(tempArray[i].baseStats.id === this.chosenPokemon.baseStats.id){

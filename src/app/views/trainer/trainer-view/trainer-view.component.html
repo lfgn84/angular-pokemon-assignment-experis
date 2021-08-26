@@ -1,8 +1,10 @@
-<p>trainer-view works!</p>
-<div>
+
+<div class="nav-container font">
     <app-to-catalogue-button></app-to-catalogue-button>
-<app-log-out-button></app-log-out-button>
+    <app-log-out-button></app-log-out-button>
 
 </div>
-
-<app-trainer-pokemon-card *ngFor="let catchedPokemon of catchedPokemons" [catchedPokemon]="catchedPokemon"></app-trainer-pokemon-card>
+<div class="catalogue-container font">
+    <app-trainer-pokemon-card *ngFor="let catchedPokemon of catchedPokemons" [catchedPokemon]="catchedPokemon">
+    </app-trainer-pokemon-card>
+</div>

@@ -1,23 +1,68 @@
-<div>
-This pokemon is:
-<p> {{ pokemon.name }} </p>
-  <img [src]='"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"+this.assignIndex(this.pokemonIndex)+".png"'/>
-  <div>
+<div *ngIf="!chosenPokemon.catched">
+  <div class="card-container">
+    <div class="details-container">
+      <img class="pokemon-image"
+        [src]='"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"+this.assignIndex(this.pokemonIndex)+".png"' />
 
-  <div>
-    <label>Weight: </label>
-    <p>{{chosenPokemon.profile.weight}}</p>
-  </div>
 
-  <div>
-    <label>Height: </label>
-    <p>{{chosenPokemon.profile.height}}</p>
-  </div>
+      <div>
+        <div class="card-elements">
+          <p> {{ pokemon.name }} </p>
+          <div class="card-elements">
+            <label>Weight: </label>
+            <p>{{chosenPokemon.profile.weight}}</p>
+          </div>
 
-  </div>
-  <div>
-    <button *ngIf="!chosenPokemon.catched" (click)="catchPokemon()">Catch !</button>
-    <button *ngIf="chosenPokemon.catched" (click)="releasePokemon()">Release !</button>
+          <div class="card-elements">
+            <label>Height: </label>
+            <p>{{chosenPokemon.profile.height}}</p>
+          </div>
+        </div>
+
+
+      </div>
+      <div>
+        <button class="button" *ngIf="!chosenPokemon.catched" (click)="catchPokemon()">Catch !</button>
+        <button class="button" *ngIf="chosenPokemon.catched" (click)="releasePokemon()">Release !</button>
+      </div>
+
+
+    </div>
+
   </div>
 </div>
+<div *ngIf="chosenPokemon.catched">
+  <div class="card-container-caught">
+    <div class="details-container">
+      <img class="pokemon-image"
+        [src]='"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"+this.assignIndex(this.pokemonIndex)+".png"' />
 
+
+      <div>
+        <div class="card-elements">
+          <p> {{ pokemon.name }} </p>
+          <div class="card-elements">
+            <label>Weight: </label>
+            <p>{{chosenPokemon.profile.weight}}</p>
+          </div>
+
+          <div class="card-elements">
+            <label>Height: </label>
+            <p>{{chosenPokemon.profile.height}}</p>
+          </div>
+        </div>
+
+
+      </div>
+      <div>
+        <button class="button" *ngIf="!chosenPokemon.catched" (click)="catchPokemon()">Catch !</button>
+        <button class="button" *ngIf="chosenPokemon.catched" (click)="releasePokemon()">Release !</button>
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+</div>
