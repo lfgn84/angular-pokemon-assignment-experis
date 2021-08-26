@@ -60,6 +60,15 @@
     flex-wrap: wrap;
     
 }
+.landing-container{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 10%;
+    
+}
 .button{
     display: flex;
     align-items: center;
