@@ -5,8 +5,8 @@
     border: 2px solid cornflowerblue; 
     background-color: white;
     border-radius: 6px;
-    margin:auto;
-    
+    margin:5px;
+    box-shadow: 0 7px #999;
 }
 .card-container-caught{
     width:70%;
@@ -14,7 +14,8 @@
     border: 2px solid rgb(235, 119, 24); 
     background-color: white;
     border-radius: 6px;
-    margin:auto;
+    margin:5px;
+    box-shadow: 0 7px #999;
     
 }
 .details-container{
@@ -36,6 +37,10 @@
     height: 40%;
     width: 40%;
 }
+.pokeball-image{
+    height: 5%;
+    width: 5%;
+}
 .nav-container{
     display: flex;
     flex-flow: row wrap;
@@ -49,7 +54,7 @@
 }
 .catalogue-container{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: flex-start;
     flex-direction: row;
     flex-wrap: wrap;
