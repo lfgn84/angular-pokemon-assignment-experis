@@ -1,3 +1,16 @@
+# Landing Page
+Type in your name to access the rest of the application, press Enter to submit your name.
+
+# Catalogue Page
+Click on a pokemon that you wish to catch. Clicking on a pokemon will add them to your trainer collection. Caught pokemon are indicated by the pokeball symbol and orange background. These pokemon can be viewed by clicking “Go to trainer”. You can also release a pokemon and delete them from your collection by clicking on them again.
+
+# Trainer Page
+Here you can see the pokemon you have collected throughout your journey
+
+# Logging out
+At any time when you are on either the Trainer page or the Catalogue page you may choose to log out by pressing the logout button. This takes you back to the Landing page and deleted all data (both username and collected pokemon).
+
+
 # AngularPokemonAssignmentExperis
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.2.
