@@ -26,7 +26,6 @@ export class LogOutButtonComponent implements OnInit {
       sessionStorage.clear()
       this.router.navigateByUrl("")
     }
-
-  }
+}
 
 }
