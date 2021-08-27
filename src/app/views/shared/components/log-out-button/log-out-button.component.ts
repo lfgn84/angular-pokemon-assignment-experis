@@ -14,8 +14,10 @@ export class LogOutButtonComponent implements OnInit {
   }
 
   logOut(){
-    sessionStorage.clear()
-    this.router.navigateByUrl("")
+    if(confirm("If you log out your 'catched' pokemons will reset. Want to proceed ?")){
+      sessionStorage.clear()
+      this.router.navigateByUrl("")
+    }
   }
 
 }
