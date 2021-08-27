@@ -1,10 +1,14 @@
 <div>
-  <h1>WELCOME TO THE POKEMON CATCHER </h1>
+  
+  <div >
+     <h1>WELCOME TO THE POKEMON CATCHER </h1> 
+  </div>
+  
 <form>
   <div class="login-container">
     
-    <label class="card-elements" for="userName">Enter Your Name </label>
-    <input  class="card-elements" id="userName" name="userName" [(ngModel)]="userName" placeholder="Your user name"/>
+    <label class="h4" for="userName"><h4>Enter Your Name</h4>  </label>
+    <input  class="card-elements input" id="userName" name="userName" [(ngModel)]="userName" placeholder="Your user name"/>
     <input  class="button" type="submit" value="Enter" (click)="submitName()" />
     
   </div>

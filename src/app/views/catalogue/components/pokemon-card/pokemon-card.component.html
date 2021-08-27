@@ -1,31 +1,29 @@
 <div *ngIf="!chosenPokemon.catched" (click)="catchPokemon()">
-  <div class="card-container" >
-    <div class="details-container" >
+  <div class="card-container">
+    <div class="details-container">
       <img class="pokemon-image"
         [src]='"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"+this.assignIndex(this.pokemonIndex)+".png"' />
 
-
-      <div>
-        <div class="card-elements">
-          <p> {{ pokemon.name }} </p>
-          <div class="card-elements">
-            <label>Weight: </label>
-            <p>{{chosenPokemon.profile.weight}}</p>
-          </div>
-
-          <div class="card-elements">
-            <label>Height: </label>
-            <p>{{chosenPokemon.profile.height}}</p>
-          </div>
+        <div  class="card-elements">
+          <img  *ngIf="chosenPokemon.catched" class="pokeball-image"
+          src="https://upload.wikimedia.org/wikipedia/commons/5/53/Pok%C3%A9_Ball_icon.svg">
         </div>
 
+      <div class="card-elements">
+        
+        <div class="card-elements">
+          <p> {{ pokemon.name }} </p>
+        </div>
+        <div class="card-elements">
+          <label>Weight: </label>
+          <p>{{chosenPokemon.profile.weight}}</p>
+        </div>
 
+        <div class="card-elements">
+          <label>Height: </label>
+          <p>{{chosenPokemon.profile.height}}</p>
+        </div>
       </div>
-      <div>
-<!--        <button class="button" *ngIf="!chosenPokemon.catched" (click)="catchPokemon()">Catch !</button>-->
-<!--        <button class="button" *ngIf="chosenPokemon.catched" (click)="releasePokemon()">Release !</button>-->
-      </div>
-
 
     </div>
 
@@ -38,27 +36,26 @@
         [src]='"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"+this.assignIndex(this.pokemonIndex)+".png"' />
 
 
-      <div>
+        <div *ngIf="chosenPokemon.catched" class="card-elements">
+          <img  class="pokeball-image"
+            src="https://upload.wikimedia.org/wikipedia/commons/5/53/Pok%C3%A9_Ball_icon.svg">
+        </div>
+      <div class="card-elements">
+
+        
         <div class="card-elements">
-          <img class="pokeball-image card-elements" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Pok%C3%A9_Ball_icon.svg" >
           <p> {{ pokemon.name }} </p>
-          <div class="card-elements">
-            <label>Weight: </label>
-            <p>{{chosenPokemon.profile.weight}}</p>
-          </div>
-
-          <div class="card-elements">
-            <label>Height: </label>
-            <p>{{chosenPokemon.profile.height}}</p>
-          </div>
-
+        </div>
+        <div class="card-elements">
+          <label>Weight: </label>
+          <p>{{chosenPokemon.profile.weight}}</p>
         </div>
 
+        <div class="card-elements">
+          <label>Height: </label>
+          <p>{{chosenPokemon.profile.height}}</p>
+        </div>
 
-      </div>
-      <div>
-<!--        <button class="button" *ngIf="!chosenPokemon.catched" (click)="catchPokemon()">Catch !</button>-->
-<!--        <button class="button" *ngIf="chosenPokemon.catched" (click)="releasePokemon()">Release !</button>-->
       </div>
 
     </div>

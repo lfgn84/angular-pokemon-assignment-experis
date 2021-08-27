@@ -55,14 +55,12 @@ export class CatalogueViewComponent implements OnInit {
    * @param value
    */
   pushPokemon(value: IndivdualPokemon) {
-    //console.log("Logging from parent : "+JSON.stringify(value))
     if (sessionStorage.storedCatchedPokemons) {
       this.catchedPokemons = JSON.parse(sessionStorage.storedCatchedPokemons);
 
     }
     this.catchedPokemons.push(value)
     sessionStorage.storedCatchedPokemons = JSON.stringify(this.catchedPokemons)
-    //this.catchedPokemons.push(value)
   }
 
   /**

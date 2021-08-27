@@ -38,8 +38,13 @@
     width: 40%;
 }
 .pokeball-image{
-    height: 5%;
-    width: 5%;
+    opacity: 50%;
+    height: 15%;
+    width: 15%;
+    position:absolute;
+    padding-bottom: 5%;
+    
+    
 }
 .nav-container{
     display: flex;
@@ -114,4 +119,21 @@ color: white;
     background-position: center;
     background-attachment: fixed;
     opacity: 100%;
+}
+
+.input{
+    border-radius: 6px;
+    border: 2px solid cornflowerblue; ;
+    
+
+
+}
+h1{
+    font-size:250%;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+h4{
+    color: white;
 }
