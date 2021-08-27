@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 
 @Component({
@@ -8,12 +8,20 @@ import {Router} from "@angular/router";
 })
 export class ToCatalogueButtonComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  /**
+   * Loading router as parameter in component's constructor
+   */
+  constructor(private router: Router) {
+  }
 
   ngOnInit(): void {
   }
 
-  toCatalogue(){
+  /**
+   * Method triggered on 'Go to catalogue' button that routes the user to
+   * catalogue view
+   */
+  toCatalogue() {
     this.router.navigateByUrl("/catalogue")
   }
 
