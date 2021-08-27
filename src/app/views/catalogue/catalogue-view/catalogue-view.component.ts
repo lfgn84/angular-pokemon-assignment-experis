@@ -3,7 +3,6 @@ import {Router} from '@angular/router';
 import {IndivdualPokemon, Pokemon} from 'src/app/models/pokemon.model';
 import {CatalogueServiceService as CatalogueService} from 'src/app/services/catalogue-service.service';
 
-//import {Observable} from "rxjs";
 @Component({
   selector: 'app-catalogue-view',
   templateUrl: './catalogue-view.component.html',
@@ -20,8 +19,6 @@ export class CatalogueViewComponent implements OnInit {
    */
   allPokemons: any = []
   catchedPokemons: IndivdualPokemon[] = []
-
-  //isTrainerEmpty: boolean = true;
 
   constructor(private router: Router, private catalogueService: CatalogueService) {
   }
@@ -52,7 +49,7 @@ export class CatalogueViewComponent implements OnInit {
   /**
    * Method triggered when child component ('pokemon-card-component') emit an object of type
    * IndividualPokemon, and then push this object into sessionStorage's parsed array.
-   * @param value
+   * @param value object of IndividualPokemon type
    */
   pushPokemon(value: IndivdualPokemon) {
     if (sessionStorage.storedCatchedPokemons) {
@@ -66,7 +63,7 @@ export class CatalogueViewComponent implements OnInit {
   /**
    * Method triggered when child component ('pokemon-card-component') emit an object of type
    * IndividualPokemon, and then remove this object from sessionStorage's parsed array.
-   * @param value
+   * @param value object of IndividualPokemon type
    */
   removePokemon(value: IndivdualPokemon) {
     if (sessionStorage.storedCatchedPokemons) {

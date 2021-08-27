@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router'
-import { Subscription } from 'rxjs';
-import { Location } from '@angular/common';
+import {Subscription} from 'rxjs';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-landing-view',
@@ -10,22 +10,20 @@ import { Location } from '@angular/common';
 })
 export class LandingViewComponent implements OnInit {
   /**
-    * Bringing router as parameter in components constructor
-   * @param router
-   * @param _location
+   * Loading router and location as parameters in component's constructor
    */
-  constructor(private router:Router, private _location: Location) {
-   }
+  constructor(private router: Router, private _location: Location) {
+  }
 
+  /**
+   * Method triggered when component mounts. If a user is 'logged in' already it re-directs the user to
+   * the view where they were previously.
+   */
   ngOnInit(): void {
-    if(sessionStorage.userName){
+    if (sessionStorage.userName) {
       this._location.back();
 
-  }
-  }
-  hasRoute(route: string){
-    return this.router.url === route;
-
+    }
   }
 
 

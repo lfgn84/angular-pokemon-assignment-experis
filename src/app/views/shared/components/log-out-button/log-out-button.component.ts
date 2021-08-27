@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 
 @Component({
@@ -8,14 +8,25 @@ import {Router} from "@angular/router";
 })
 export class LogOutButtonComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  /**
+   * Loading router as parameter in component's constructor
+   */
+  constructor(private router: Router) {
+  }
 
   ngOnInit(): void {
   }
 
-  logOut(){
-    sessionStorage.clear()
-    this.router.navigateByUrl("")
+  /**
+   * Method triggered when 'Logout' button is pressed. The method clears out sessionStorage
+   * and re-directs user to Login/Landing view.
+   */
+  logOut() {
+    if (confirm("If you log out your 'catched' pokemons will reset. Want to proceed ?")) {
+      sessionStorage.clear()
+      this.router.navigateByUrl("")
+    }
+
   }
 
 }

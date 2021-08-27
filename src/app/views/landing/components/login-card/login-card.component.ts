@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, RouterLink, Routes } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {Router, RouterLink, Routes} from '@angular/router';
 
 @Component({
   selector: 'app-login-card',
@@ -11,15 +11,16 @@ import { Router, RouterLink, Routes } from '@angular/router';
  */
 export class LoginCardComponent implements OnInit {
   userName: string = "";
+
   //routerLink: string = '';
 
   /**
-   * Bringing router as parameter in components constructor
-   * @param router
+   * Loading router as parameter in components constructor
+   *
    */
-  constructor(private router:Router ) {
+  constructor(private router: Router) {
 
-   }
+  }
 
   ngOnInit(): void {
   }
@@ -30,17 +31,16 @@ export class LoginCardComponent implements OnInit {
    * and opens an alert pop-up in case the user haven't enter a name.
    * If the name is valid the user is re-directed to the catalogue view.
    */
-  submitName(){
-    if(this.userName !==""){
+  submitName() {
+    if (this.userName !== "") {
       sessionStorage.userName = this.userName;
       this.router.navigateByUrl("/catalogue")
-    }else{
+    } else {
       alert("Please enter a name.")
 
     }
 
   }
-
 
 
 }
