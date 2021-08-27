@@ -6,7 +6,7 @@ export interface IndivdualPokemon {
   catched:boolean,
   baseStats: {
     img: string,
-    types: string,
+    types: any,
     name: string,
     id: number
   },

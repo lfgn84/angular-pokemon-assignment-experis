@@ -7,14 +7,28 @@ import {CatalogueServiceService as CatalogueService} from "../../../../services/
   templateUrl: './pokemon-card.component.html',
   styleUrls: ['./pokemon-card.component.css']
 })
+/**
+ * Pokemon card component where each and every Pokemon's picture, name , weight and height are displayed on catalogue.
+ */
 export class PokemonCardComponent implements OnInit {
+  /**
+   * Initialized pokemon object of IndividualPokemon type to assign data related to the specific pokemon.
+   */
   chosenPokemon: IndivdualPokemon = {catched:false, baseStats: {img:"",types:"",name:"",id:0}, profile:{height:0,weight:0}}
+
+  /**
+   * EventEmitter that sends an object to parent component of IndividualPokemon type to be added to sessionStorage
+   * as a caught pokemon.
+   */
   @Output() onCatchingPokemon : EventEmitter<IndivdualPokemon> = new EventEmitter();
+
+  /**
+   *
+   */
   @Output() onReleasePokemon : EventEmitter<IndivdualPokemon> = new EventEmitter();
   @Input() pokemon: Pokemon = { name:"", url:""};
   @Input() pokemonIndex: number = 0;
-  //catched : boolean = false;
-  // @ts-ignore
+
   constructor(private catalogueService : CatalogueService) { }
 
   ngOnInit(): void {
@@ -53,14 +67,12 @@ export class PokemonCardComponent implements OnInit {
   }
 
   catchPokemon(){
-    //this.catched = true;
     this.chosenPokemon.catched = true;
     this.onCatchingPokemon.emit(this.chosenPokemon)
 
   }
 
   releasePokemon(){
-    //this.catched = false
     this.chosenPokemon.catched = false;
     this.onReleasePokemon.emit(this.chosenPokemon)
   }
