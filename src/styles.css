@@ -32,6 +32,10 @@
     flex-wrap: wrap;
     flex-direction: row;
     margin:8px;
+    text-transform: capitalize;
+}
+.profile-elements{
+    margin:4px;
 }
 .pokemon-image{
     height: 40%;
@@ -123,10 +127,9 @@ color: white;
 
 .input{
     border-radius: 6px;
-    border: 2px solid cornflowerblue; ;
+    border: 2px solid cornflowerblue; 
+    height: 35px;
     
-
-
 }
 h1{
     font-size:250%;
@@ -136,4 +139,8 @@ h1{
 }
 h4{
     color: white;
+}
+.pokemon-name{
+    font-size: 150%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }

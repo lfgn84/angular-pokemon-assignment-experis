@@ -4,24 +4,27 @@
       <img class="pokemon-image"
         [src]='"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"+this.assignIndex(this.pokemonIndex)+".png"' />
 
-        <div  class="card-elements">
-          <img  *ngIf="chosenPokemon.catched" class="pokeball-image"
+      <div class="card-elements">
+        <img *ngIf="chosenPokemon.catched" class="pokeball-image"
           src="https://upload.wikimedia.org/wikipedia/commons/5/53/Pok%C3%A9_Ball_icon.svg">
-        </div>
+      </div>
 
       <div class="card-elements">
-        
-        <div class="card-elements">
+
+        <div class="card-elements pokemon-name">
           <p> {{ pokemon.name }} </p>
         </div>
         <div class="card-elements">
-          <label>Weight: </label>
-          <p>{{chosenPokemon.profile.weight}}</p>
-        </div>
-
-        <div class="card-elements">
-          <label>Height: </label>
-          <p>{{chosenPokemon.profile.height}}</p>
+          <div class="profile-elements">
+            <label>Weight: </label>
+            <p>{{chosenPokemon.profile.weight}} Kg</p>
+            
+          </div>
+          <div class="profile-elements">
+            <label> Height: </label>
+            <p>{{chosenPokemon.profile.height}} m</p>
+            
+          </div>
         </div>
       </div>
 
@@ -36,24 +39,28 @@
         [src]='"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/"+this.assignIndex(this.pokemonIndex)+".png"' />
 
 
-        <div *ngIf="chosenPokemon.catched" class="card-elements">
-          <img  class="pokeball-image"
-            src="https://upload.wikimedia.org/wikipedia/commons/5/53/Pok%C3%A9_Ball_icon.svg">
-        </div>
+      <div *ngIf="chosenPokemon.catched" class="card-elements">
+        <img class="pokeball-image" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Pok%C3%A9_Ball_icon.svg">
+      </div>
       <div class="card-elements">
 
-        
-        <div class="card-elements">
+
+        <div class="card-elements pokemon-name">
           <p> {{ pokemon.name }} </p>
         </div>
         <div class="card-elements">
-          <label>Weight: </label>
-          <p>{{chosenPokemon.profile.weight}}</p>
-        </div>
+          <div class="profile-elements">
+            <label>Weight: </label>
+            <p>{{chosenPokemon.profile.weight}} Kg</p>
+            
+          </div>
+          <div class="profile-elements">
+            <label> Height: </label>
+            <p>{{chosenPokemon.profile.height}} m</p>
+            
+          </div>
 
-        <div class="card-elements">
-          <label>Height: </label>
-          <p>{{chosenPokemon.profile.height}}</p>
+
         </div>
 
       </div>

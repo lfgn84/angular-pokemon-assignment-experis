@@ -36,8 +36,8 @@ export class PokemonCardComponent implements OnInit {
     let name =pokemon.name;
     let id = pokemon.id;
     let types = pokemon.types;
-    let weight = pokemon.weight;
-    let height = pokemon.height;
+    let weight = pokemon.weight/10;
+    let height = pokemon.height/10;
     let img = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/' + pokemon.id + '.png';
 
     let pokemonObject = {
