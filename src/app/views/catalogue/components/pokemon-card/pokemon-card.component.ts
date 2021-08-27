@@ -29,13 +29,10 @@ export class PokemonCardComponent implements OnInit {
           }
         }
       }
-    
-
     });
   }
 
-  buildPokemonObject(pokemon: any): IndivdualPokemon{
-    
+  buildPokemonObject(pokemon: any): IndivdualPokemon {
     let name =pokemon.name;
     let id = pokemon.id;
     let types = pokemon.types;
@@ -59,7 +56,7 @@ export class PokemonCardComponent implements OnInit {
     //this.catched = true;
     this.chosenPokemon.catched = true;
     this.onCatchingPokemon.emit(this.chosenPokemon)
-    
+
   }
 
   releasePokemon(){
